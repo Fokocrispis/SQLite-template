@@ -6,9 +6,10 @@ conn = sqlite3.connect('orders.db')
 cursor = conn.cursor()
 
 # Create tables
+# Add NOT NULL to avoid null values
 cursor.execute("""CREATE TABLE IF NOT EXISTS users(
    userid INT PRIMARY KEY,
-   fname TEXT,
+   fname TEXT, 
    lname TEXT,
    gender TEXT);
 """)
